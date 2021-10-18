@@ -16,7 +16,7 @@ import com.bumptech.glide.Glide;
 import com.uc.moviedb.R;
 import com.uc.moviedb.helper.Const;
 import com.uc.moviedb.model.NowPlaying;
-import com.uc.moviedb.view.MovieDetailsActivity;
+import com.uc.moviedb.view.activities.MovieDetailsActivity;
 
 import java.util.ArrayList;
 import java.util.List;

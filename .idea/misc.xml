@@ -8,9 +8,10 @@
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/activity_movie_details.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/activity_now_playing.xml" value="0.264" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/card_now_playing.xml" value="0.23645833333333333" />
+        <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/fragment_movie_details.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/fragment_now_playing.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/fragment_up_coming.xml" value="0.23645833333333333" />
-        <entry key="..\:/Android/MovieDBA/app/src/main/res/menu/main_menu.xml" value="0.23645833333333333" />
+        <entry key="..\:/Android/MovieDBA/app/src/main/res/menu/main_menu.xml" value="0.264" />
       </map>
     </option>
   </component>

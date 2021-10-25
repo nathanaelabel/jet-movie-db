@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.uc.moviedb.R;
 import com.uc.moviedb.adapter.NowPlayingAdapter;
+import com.uc.moviedb.helper.ItemClickSupport;
 import com.uc.moviedb.model.NowPlaying;
 import com.uc.moviedb.view.activities.NowPlayingActivity;
 import com.uc.moviedb.viewmodel.MovieViewModel;
@@ -89,6 +91,24 @@ public class NowPlayingFragment extends Fragment {
             NowPlayingAdapter adapter = new NowPlayingAdapter(getActivity());
             adapter.setListNowPlaying(nowPlaying.getResults());
             rv_nowplaying.setAdapter(adapter);
+
+            ItemClickSupport.addTo(rv_nowplaying).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+                @Override
+                public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("movieId", "" + nowPlaying.getResults().get(position).getId());
+                    Navigation.findNavController(v).navigate(R.id.action_nowPlayingFragment_to_movieDetailsFragment, bundle);
+                }
+            });
+
+            ItemClickSupport.addTo(rv_nowplaying).setOnItemLongClickListener(new ItemClickSupport.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClicked(RecyclerView recyclerView, int position, View v) {
+
+                    return false;
+                }
+            });
+
         }
     };
 

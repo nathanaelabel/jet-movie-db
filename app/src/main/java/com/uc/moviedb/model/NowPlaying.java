@@ -9,6 +9,8 @@ import java.util.List;
 
 public class NowPlaying implements Parcelable {
 
+//  NowPlaying and UpComing Model both are the same, so I'll use this as the model for nowPlaying and upComing.
+
     private int page;
     private List<Results> results;
     private Dates dates;

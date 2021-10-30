@@ -425,4 +425,5 @@ public class Movies implements Parcelable {
             this.name = name;
         }
     }
+
 }

@@ -3,11 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/MovieDBA/app/src/main/res/drawable/background_gradient.xml" value="0.2526041666666667" />
+        <entry key="..\:/Android/MovieDBA/app/src/main/res/drawable/background_shape.xml" value="0.2526041666666667" />
+        <entry key="..\:/Android/MovieDBA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2526041666666667" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/activity_main.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/activity_main_menu.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/activity_movie_details.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/activity_now_playing.xml" value="0.264" />
+        <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/card_movie_cast.xml" value="0.264" />
+        <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/card_movie_crew.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/card_now_playing.xml" value="0.23645833333333333" />
+        <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/card_production_company.xml" value="0.23645833333333333" />
+        <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/custom_loading.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/fragment_movie_details.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/fragment_now_playing.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/MovieDBA/app/src/main/res/layout/fragment_up_coming.xml" value="0.23645833333333333" />

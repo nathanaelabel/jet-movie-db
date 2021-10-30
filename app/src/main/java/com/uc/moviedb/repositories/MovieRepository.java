@@ -3,6 +3,7 @@ package com.uc.moviedb.repositories;
 import androidx.lifecycle.MutableLiveData;
 
 import com.uc.moviedb.helper.Const;
+import com.uc.moviedb.model.Credits;
 import com.uc.moviedb.model.Genre;
 import com.uc.moviedb.model.Movies;
 import com.uc.moviedb.model.NowPlaying;
@@ -46,10 +47,11 @@ public class MovieRepository {
         return result;
     }
 
+    // NowPlaying
     public MutableLiveData<NowPlaying> getNowPlayingData() {
         final MutableLiveData<NowPlaying> result = new MutableLiveData<>();
 
-        ApiService.endpoint().getNowPLaying(Const.API_KEY).enqueue(new Callback<NowPlaying>() {
+        ApiService.endpoint().getNowPlaying(Const.API_KEY).enqueue(new Callback<NowPlaying>() {
             @Override
             public void onResponse(Call<NowPlaying> call, Response<NowPlaying> response) {
                 result.setValue(response.body());
@@ -64,6 +66,7 @@ public class MovieRepository {
         return result;
     }
 
+    // Genres
     public MutableLiveData<List<Genre.Genres>> getGenres(List<Integer> genreIds) {
         final MutableLiveData<List<Genre.Genres>> result = new MutableLiveData<>();
 
@@ -89,4 +92,43 @@ public class MovieRepository {
 
         return result;
     }
+
+    // UpComing
+    public MutableLiveData<NowPlaying> getUpComingData() {
+        final MutableLiveData<NowPlaying> result = new MutableLiveData<>();
+
+        ApiService.endpoint().getUpComing(Const.API_KEY).enqueue(new Callback<NowPlaying>() {
+            @Override
+            public void onResponse(Call<NowPlaying> call, Response<NowPlaying> response) {
+                result.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<NowPlaying> call, Throwable t) {
+
+            }
+        });
+
+        return result;
+    }
+
+    // Credits
+    public MutableLiveData<Credits> getCreditsData(String movieId) {
+        final MutableLiveData<Credits> result = new MutableLiveData<>();
+
+        ApiService.endpoint().getCredits(movieId, Const.API_KEY).enqueue(new Callback<Credits>() {
+            @Override
+            public void onResponse(Call<Credits> call, Response<Credits> response) {
+                result.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Credits> call, Throwable t) {
+
+            }
+        });
+
+        return result;
+    }
+
 }

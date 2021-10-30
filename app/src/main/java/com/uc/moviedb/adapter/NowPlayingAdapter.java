@@ -1,8 +1,6 @@
 package com.uc.moviedb.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,22 +9,21 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.uc.moviedb.R;
 import com.uc.moviedb.helper.Const;
 import com.uc.moviedb.model.NowPlaying;
-import com.uc.moviedb.view.activities.MovieDetailsActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.ViewHolder> {
 
+//  NowPlaying and UpComing Adapter both are the same, so I'll use this as the adapter for nowPlaying and upComing.
     private Context context;
     private List<NowPlaying.Results> listNowPlaying;
+
     private List<NowPlaying.Results> getListNowPlaying() {
         return listNowPlaying;
     }

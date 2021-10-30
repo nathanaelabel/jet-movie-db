@@ -16,8 +16,8 @@ import android.view.ViewGroup;
 import com.uc.moviedb.R;
 import com.uc.moviedb.adapter.NowPlayingAdapter;
 import com.uc.moviedb.helper.ItemClickSupport;
+import com.uc.moviedb.helper.LoadingDialog;
 import com.uc.moviedb.model.NowPlaying;
-import com.uc.moviedb.view.activities.NowPlayingActivity;
 import com.uc.moviedb.viewmodel.MovieViewModel;
 
 /**
@@ -69,6 +69,7 @@ public class NowPlayingFragment extends Fragment {
 
     private RecyclerView rv_nowplaying;
     private MovieViewModel movieViewModel;
+    private final LoadingDialog loadingDialog = new LoadingDialog(getActivity());
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,6 +81,7 @@ public class NowPlayingFragment extends Fragment {
         movieViewModel = new ViewModelProvider(getActivity()).get(MovieViewModel.class);
         movieViewModel.getNowPlaying();
         movieViewModel.getResultNowPlaying().observe(getActivity(), showNowPlaying);
+//      loadingDialog.startLoadingDialog();
 
         return view;
     }
@@ -98,14 +100,6 @@ public class NowPlayingFragment extends Fragment {
                     Bundle bundle = new Bundle();
                     bundle.putString("movieId", "" + nowPlaying.getResults().get(position).getId());
                     Navigation.findNavController(v).navigate(R.id.action_nowPlayingFragment_to_movieDetailsFragment, bundle);
-                }
-            });
-
-            ItemClickSupport.addTo(rv_nowplaying).setOnItemLongClickListener(new ItemClickSupport.OnItemLongClickListener() {
-                @Override
-                public boolean onItemLongClicked(RecyclerView recyclerView, int position, View v) {
-
-                    return false;
                 }
             });
 

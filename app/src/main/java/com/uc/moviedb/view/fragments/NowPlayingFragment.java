@@ -69,7 +69,6 @@ public class NowPlayingFragment extends Fragment {
 
     private RecyclerView rv_nowplaying;
     private MovieViewModel movieViewModel;
-    private final LoadingDialog loadingDialog = new LoadingDialog(getActivity());
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,7 +80,6 @@ public class NowPlayingFragment extends Fragment {
         movieViewModel = new ViewModelProvider(getActivity()).get(MovieViewModel.class);
         movieViewModel.getNowPlaying();
         movieViewModel.getResultNowPlaying().observe(getActivity(), showNowPlaying);
-//      loadingDialog.startLoadingDialog();
 
         return view;
     }

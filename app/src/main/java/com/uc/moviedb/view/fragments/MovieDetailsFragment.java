@@ -1,5 +1,6 @@
 package com.uc.moviedb.view.fragments;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -69,8 +70,9 @@ public class MovieDetailsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            progressDialog = ProgressDialog.show(getActivity(), "", "Please Wait...", true);
+//            progressDialog = ProgressDialog.show(getActivity(), .getRootView().getContext()).inflate(R.layout.custom_loading, null);
+            progressDialog.show();
         }
     }
 
@@ -79,6 +81,7 @@ public class MovieDetailsFragment extends Fragment {
     private ImageView img_backdrop, img_poster, img_company;
     private MovieViewModel viewModel;
     private RecyclerView rv_cast, rv_crew, rv_productionCompany;
+    private ProgressDialog progressDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -137,6 +140,7 @@ public class MovieDetailsFragment extends Fragment {
             adapter.setProductionCompaniesList(movies.getProduction_companies());
             rv_productionCompany.setAdapter(adapter);
             rv_productionCompany.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+            progressDialog.dismiss();
         }
     };
 

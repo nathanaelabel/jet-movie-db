@@ -1,6 +1,10 @@
 package com.uc.moviedb.adapter;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +13,15 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.uc.moviedb.R;
 import com.uc.moviedb.helper.Const;
+import com.uc.moviedb.helper.LoadingDialog;
 import com.uc.moviedb.model.NowPlaying;
+import com.uc.moviedb.view.fragments.MovieDetailsFragment;
 
 import java.util.List;
 
@@ -39,6 +46,7 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.Vi
     @Override
     public NowPlayingAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_now_playing, parent, false);
+
         return new NowPlayingAdapter.ViewHolder(view);
     }
 
@@ -53,6 +61,15 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.Vi
 //        holder.cardview_nowplaying.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
+////              final LoadingDialog loadingDialog = new LoadingDialog();
+//                AlertDialog.Builder builder = new AlertDialog.Builder(view.getRootView().getContext());
+//                View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.custom_loading, null);
+//                Bundle bundle = new Bundle();
+//                Navigation.findNavController(view).navigate(R.id.action_nowPlayingFragment_to_movieDetailsFragment, bundle);
+//                builder.setView(dialogView);
+//                builder.setCancelable(true);
+//                builder.show();
+
 //                Intent intent = new Intent(context, MovieDetailsActivity.class);
 //                intent.putExtra("movie_id", "" + results.getId());
 //                intent.putExtra("image", "" + results.getPoster_path());

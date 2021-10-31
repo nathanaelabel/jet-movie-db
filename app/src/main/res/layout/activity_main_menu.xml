@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:background="@color/darkblack"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:theme="@style/Theme.MovieDB"
         app:collapseIcon="@drawable/ic_baseline_arrow_back_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -76,8 +76,8 @@ public class MovieDetailsFragment extends Fragment {
         }
     }
 
-    private TextView lbl_movie_id, lbl_title, lbl_tagline, lbl_popularity, lbl_releasedate,
-            lbl_genre, lbl_overview;
+    private TextView lbl_movie_id, lbl_title, lbl_tagline, lbl_popularity, lbl_vote,
+            lbl_releasedate, lbl_genre, lbl_overview;
     private ImageView img_backdrop, img_poster, img_company;
     private MovieViewModel viewModel;
     private RecyclerView rv_cast, rv_crew, rv_productionCompany;
@@ -91,6 +91,7 @@ public class MovieDetailsFragment extends Fragment {
         lbl_title = view.findViewById(R.id.lbl_title_movie_details);
         lbl_tagline = view.findViewById(R.id.lbl_tagline_movie_details);
         lbl_popularity = view.findViewById(R.id.lbl_popularity_movie_details);
+        lbl_vote = view.findViewById(R.id.lbl_rating_movie_details);
         lbl_releasedate = view.findViewById(R.id.lbl_releasedate_movie_details);
         lbl_genre = view.findViewById(R.id.lbl_genre_movie_details);
         lbl_overview = view.findViewById(R.id.lbl_overview_movie_details);
@@ -115,10 +116,11 @@ public class MovieDetailsFragment extends Fragment {
 
             lbl_title.setText(movies.getTitle());
             lbl_tagline.setText(movies.getTagline());
-            String popularity = "Popularity: " + movies.getPopularity() + " | Avg.Vote: " +
-                    movies.getVote_average() + " (" + movies.getVote_count() + ")";
-            lbl_popularity.setText(popularity);
-            lbl_releasedate.setText(movies.getRelease_date());
+            lbl_popularity.setText(String.valueOf(movies.getPopularity()));
+            String vote = movies.getVote_average() + " (" + movies.getVote_count() + ")";
+            lbl_vote.setText(vote);
+            String releaseDateRunTime = movies.getRelease_date() + "  •  " + movies.getRuntime() + "m";
+            lbl_releasedate.setText(releaseDateRunTime);
             lbl_overview.setText(movies.getOverview());
 
             String poster_path = Const.IMG_URL + movies.getPoster_path().toString();
